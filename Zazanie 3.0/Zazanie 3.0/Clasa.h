@@ -9,11 +9,9 @@ private:
     int defense;
 
 public:
-    // Constructor
     Character(std::string n, int h, int m, int a, int d)
         : name(n), health(h), mana(m), attack(a), defense(d) {}
 
-    // Getter methods
     std::string getName()
     {
         return name;
@@ -35,7 +33,6 @@ public:
         return defense;
     }
 
-    // Setter methods
     void setName(std::string n)
     {
         name = n;
@@ -59,7 +56,6 @@ public:
         defense = d;
     }
 
-    // Additional methods (e.g., attack, useItem, etc.)
     void Attack(Character& target)
     {
         int damage = attack - target.getDefense();
