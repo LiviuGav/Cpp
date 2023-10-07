@@ -9,7 +9,7 @@
 #pragma comment(lib,"winmm.lib")
 
 void printMenu(int highlight) {
-    system("cls"); // Clear the console screen
+    system("cls"); 
 
     std::cout << "Welcome" << std::endl;
     std::cout << (highlight == 0 ? "> " : "  ") << "Play" << std::endl; // ? - if
@@ -25,20 +25,20 @@ int main() {
 
         while (true) {
             choice = _getch();
-            if (choice == 224) // Arrow keys send two keycodes, the second one is 224
+            if (choice == 224) 
                 choice = _getch();
 
             switch (choice) {
-            case 72: // Up arrow
+            case 72: 
                 highlight = (highlight - 1 + 2) % 2;
                 break;
-            case 80: // Down arrow
+            case 80: 
                 highlight = (highlight + 1) % 2;
                 break;
-            case 13: // Enter key
+            case 13: 
                 if (highlight == 0) {
                     startGame();
-                    _getch(); // Wait for a key press
+                    _getch(); 
                 }
                 else if (highlight == 1) {
                     std::cout << "Bye" << std::endl;
